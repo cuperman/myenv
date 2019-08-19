@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Add commonly used folders to $PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Specify default editor. Possible values: vim, nano, ed etc.
+export EDITOR=vim
