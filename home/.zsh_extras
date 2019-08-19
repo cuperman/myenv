@@ -1,7 +1,11 @@
 #!/bin/zsh
 
+# Bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 # Add commonly used folders to $PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Specify default editor. Possible values: vim, nano, ed etc.
 export EDITOR=vim
+
