@@ -2,6 +2,14 @@
 
 Bootstraps a MacOS environment with my applicatoins and preferences
 
+## Prerequisite
+
+Install [Xcode](https://apps.apple.com/us/app/xcode/id497799835) from the Mac App Store and Xcode command line tools:
+
+```bash
+xcode-select --install
+```
+
 ## Installation
 
 ```bash
