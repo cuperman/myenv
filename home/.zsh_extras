@@ -9,3 +9,9 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # Specify default editor. Possible values: vim, nano, ed etc.
 export EDITOR=vim
 
+# Aliases
+alias dirs='dirs -v'
+alias less='less -R'
+
+# Set editing mode to vim
+bindkey -v

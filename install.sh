@@ -51,7 +51,7 @@ else
 fi
 
 cd ~
-for file in .zshrc .zsh_extras; do
+for file in .gitconfig .gitignore .zshrc .zsh_extras; do
     if [ -h $file ] ; then
         # File is already a symbolic link
         echo "Symlink for $file is already there"

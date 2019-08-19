@@ -1,0 +1,7 @@
+[user]
+	name = Jeff Cooper
+	email = jeff@cuperman.net
+[credential]
+	helper = osxkeychain
+[merge]
+	conflictstyle = diff3
