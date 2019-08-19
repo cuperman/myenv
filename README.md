@@ -1,6 +1,6 @@
 # MyEnv
 
-Bootstraps a MacOS environment with my applicatoins and preferences
+Bootstraps a MacOS environment with my applications and preferences
 
 ## Prerequisite
 
