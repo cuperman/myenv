@@ -50,6 +50,20 @@ else
     echo "✓"
 fi
 
+echo "Install Python environment"
+# Reference: https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c
+brew install pyenv
+eval "$(pyenv init -)"
+PYTHON_VERSION=3.7.4
+if [[ $(pyenv versions) != *$PYTHON_VERSION* ]]; then
+    pyenv install $PYTHON_VERSION
+    pyenv global $PYTHON_VERSION
+else
+    echo "Python $PYTHON_VERSION already installed."
+fi
+pip install --user pipenv
+
+echo "Link to dot files in ~"
 cd ~
 for file in .gitconfig .gitignore .zshrc .zsh_extras; do
     if [ -h $file ] ; then
