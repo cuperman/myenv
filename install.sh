@@ -64,20 +64,25 @@ fi
 pip install --user pipenv
 
 echo "Link to dot files in ~"
-cd ~
-for file in .gitconfig .gitignore .zshrc .zsh_extras; do
-    if [ -h $file ] ; then
+cd ~/.myenv/home
+find . -type f | sed "s|^\./||" | while read file; do
+    targetdir=$(dirname ~/"$file")
+    targetfile=$(basename "$file")
+    sourcepath=~/.myenv/home/"$file"
+
+    cd "$targetdir"
+    if [ -h "$targetfile" ] ; then
         # File is already a symbolic link
-        echo "Symlink for $file is already there"
+        echo "Symlink for \"$targetfile\" is already there"
         continue
     fi
-    if [ -d $file -o -f $file ] ; then
-        echo "Backing up existing $file to $file.b4myenv"
-        rm -rf $file.b4myenv
-        mv $file $file.b4myenv
+    if [ -d "$targetfile" -o -f "$targetfile" ] ; then
+        echo "Backing up existing \"$targetfile\" to \"$targetfile\".b4myenv"
+        rm -rf "$targetfile".b4myenv
+        mv "$targetfile" "$targetfile".b4myenv
     fi
-    echo "Creating symlink for $file"
-    ln -s ~/.myenv/home/$file
+    echo "Creating symlink for \"$targetfile\""
+    ln -s "$sourcepath"
 done
 
 echo "Done"
